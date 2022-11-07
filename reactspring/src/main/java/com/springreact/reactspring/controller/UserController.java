@@ -24,12 +24,12 @@ public class UserController {
     
 	
 
-    @PostMapping(value="/add")
+    @PostMapping(value="/signup")
     public int postRegister(@RequestBody User user) {
      
         int result=0;
 
-        boolean b=userservice.isExist(user.getEmail(), user.getEmpid());
+        boolean b=userservice.isExist(user.getUsername(), user.getMobileNumber());
         if(b==true)
         {
             System.out.println("Already user exist");
@@ -48,13 +48,13 @@ public class UserController {
     }
     
 
-    @PostMapping(value="/login")
+    @PostMapping(value="/signin")
     public int postLogin(@RequestBody User user) {
       
         
-        System.out.println("email:"+user.getEmail()+" pass:"+user.getPassword());
+        System.out.println("email:"+user.getUsername()+" pass:"+user.getPassword());
 
-        int result=userservice.isValid(user.getEmail(), user.getPassword());
+        int result=userservice.isValid(user.getUsername(), user.getPassword());
 
         System.out.println(result);
         return result;

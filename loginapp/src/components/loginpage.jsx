@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Loginpage()
 {
 
-    const [email,setEmail]=useState('');
+    const [username,setUserName]=useState('');
     
     const [password,setPassword]=useState('');
    
@@ -27,10 +27,10 @@ function Loginpage()
 
     const handleClick=(e)=> {
         e.preventDefault()
-        const user={email,password}
+        const user={username,password}
         console.log(user); 
 
-        fetch("http://localhost:8080/user/login",{
+        fetch("http://localhost:8080/user/signin",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(user) 
@@ -59,7 +59,7 @@ function Loginpage()
 
         
             <h1>Login</h1>
-            <input type="text" placeholder="Email" value={email} onChange={ (e) =>setEmail(e.target.value)}></input><br></br>
+            <input type="text" placeholder="Email" value={username} onChange={ (e) =>setUserName(e.target.value)}></input><br></br>
             <input type="password" placeholder="Password"  value={password} onChange={ (e) =>setPassword(e.target.value)}></input><br></br>
             <input type="submit" onClick={handleClick} ></input>
 
