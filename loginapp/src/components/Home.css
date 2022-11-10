@@ -1,0 +1,79 @@
+.banner-container {
+
+    background-image:#4A5BEC;
+    padding: 30px;
+    background-position: center;
+    background-size: cover;
+    min-height: 60vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-blend-mode: overlay;
+    align-items: center;
+    color: white;
+}
+.welcomepage{
+    width: 80%;
+    margin: auto;
+    padding-left:10px ;
+}
+.content{
+    width: 70%;
+    margin: auto;
+    padding-bottom: 40px;
+    color: black;
+}
+.content p{
+    color: #fff;
+}
+.navbar{
+    background-color: #1A1A33;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+
+}
+.navbar button{
+    float: right;
+    position: relative;
+    left: 700px;
+    width: 100px;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card1{
+    color: black;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    height: auto;
+    width: 350px;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+
+.button {
+    background-color: #07AB6C; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: right;
+    margin: 10px 20px 0 0;
+    border-radius: 15px;
+  }
+
+  .button:hover{
+    background-color: #2e5f30;
+  }

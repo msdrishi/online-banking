@@ -1,9 +1,15 @@
 package com.springreact.reactspring.models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.TableGenerator;
 
 @Entity
@@ -22,9 +28,28 @@ public class User {
     private String securityAnswers;
     private String accountTypeID;
     private String mobileNumber;
+    private String balance;
+    
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_uid", referencedColumnName = "id")
+    private List<Transactions> trans;
 
     
-    public int getId() {
+   
+	public List<Transactions> getTrans() {
+		return trans;
+	}
+	public void setTrans(List<Transactions> trans) {
+		this.trans = trans;
+	}
+	
+	public String getBalance() {
+		return balance;
+	}
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+	public int getId() {
         return id;
     }
     public void setId(int id) {
